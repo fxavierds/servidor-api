@@ -15,6 +15,8 @@ const { listarTarefaId,
     finalizarCompra, obterCidadesPorEstado
   } = require('./controllers/mini-ecommerce.js');
 
+  const upload = require('./controllers/upload.js');
+
 const app = express();
 const port = 3001;
 
@@ -40,4 +42,5 @@ app.put('/gerenciador-tarefas/:id/concluir', concluirTarefa);
 app.post('/mini-ecommerce/checkout/finalizar-compra', finalizarCompra);
 app.get('/mini-ecommerce/estado/:siglaEstado/cidades', obterCidadesPorEstado);
 
+app.post('/upload', upload);
 app.listen(port, () => console.log(`Servidor inicializado na porta ${port}`));
